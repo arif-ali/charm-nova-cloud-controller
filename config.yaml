@@ -790,3 +790,8 @@ options:
       allowed and letting the request fail, Negative number: Allows
       unlimited number of local devices, Positive number: Allows only
       these many number of local devices.
+  audit-middleware:
+    type: boolean
+    default: False
+    description: |
+      Option to enable or disable the audit middleware

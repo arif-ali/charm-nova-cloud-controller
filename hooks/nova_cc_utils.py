@@ -109,6 +109,7 @@ NEUTRON_CONF_DIR = "/etc/neutron"
 
 NOVA_CONF = '%s/nova.conf' % NOVA_CONF_DIR
 NOVA_API_PASTE = '%s/api-paste.ini' % NOVA_CONF_DIR
+NOVA_API_AUDIT_MAP = '%s/api_audit_map.conf' % NOVA_CONF_DIR
 VENDORDATA_FILE = '%s/vendor_data.json' % NOVA_CONF_DIR
 HAPROXY_CONF = '/etc/haproxy/haproxy.cfg'
 APACHE_PORTS_CONF = '/etc/apache2/ports.conf'
@@ -224,6 +225,10 @@ def get_base_resource_map():
                 'services': ['apache2'],
             }),
             (APACHE_PORTS_CONF, {
+                'contexts': [],
+                'services': ['apache2'],
+            }),
+            (NOVA_API_AUDIT_MAP, {
                 'contexts': [],
                 'services': ['apache2'],
             }),
